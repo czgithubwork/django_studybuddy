@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>StudyBudd | PYTHON DJANGO</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/main.css' %}" />
+
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+    </style>
+    </head>
+    
+    {% block nav %}
+    <div>
+        <a href="/">LOGO</a>
+        <form method="GET" action="{% url 'home' %}">
+            <p><input type="text" name="q" placeholder="Search Rooms..."/></p>
+        </form>
+        <p>
+            {% if request.user.is_authenticated %}
+            Hello @{{request.user}} <p><a href="{% url 'logout' %}">Logout</a></p>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </p>
+        <hr>
+    </div>
+    {% endblock %}
+    
+    {% block content %}
+    
+    <div class="container">
+    
+    <p>index page</p>
+    
+    </div>
+    
+    {% endblock %}
+</html>
