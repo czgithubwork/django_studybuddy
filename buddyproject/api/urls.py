@@ -18,7 +18,7 @@ from django.urls import path, include
 from api import views
 
 urlpatterns = [
-    path('', views.getRoutes, name="Room View"),
-    path('rooms/', views.listRoom, name="List Room View"),
-    path('rooms/<str:pk>', views.getRoom, name="Get Room View"),
+    path('', views.getRoutes, name="list_routes"),
+    path('rooms/', views.listRoom, name="list_rooms"),
+    path('rooms/<str:pk>', views.getRoom, name="get_room"),
 ]
