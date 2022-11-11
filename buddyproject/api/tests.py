@@ -14,6 +14,7 @@ class RoomTest(APITestCase):
         self.assertEqual(response.data[1], 'GET /api/rooms/')
         self.assertEqual(response.data[2], 'GET /api/rooms/:id')
 
+
     def test_listRoom(self):
         response = requests.get('http://127.0.0.1:8000/api/rooms/')
         data = response.json()
